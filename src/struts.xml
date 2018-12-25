@@ -1,0 +1,264 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="struts-default">
+		<!-- LE NHAT TUNG -->
+		<!-- Dang nhap -->
+		<action name="dangNhap" class="eCore.controller.Controller_XacThuc"
+			method="dangNhap">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/login.jsp</result>
+		</action>
+		<action name="dangXuat" class="eCore.controller.Controller_XacThuc"
+			method="dangXuat">
+			<result name="SUCCESS">/login.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		<!-- Dang nhap -->
+		
+		<!-- Đổi mật khẩu -->
+		<action name="doiMatKhauTaiKhoanTaiXe" class="eCore.controller.Controller_TaiKhoanTaiXe"
+			method="doiMatKhau">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		<!-- Đổi mật khẩu -->
+		
+		<!-- Xem chi tiet tài xế-->
+		<action name="xemChiTietTaiXe" class="eCore.controller.Controller_TaiXe"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Xem chi tiet va chinh sua tài xế-->
+		<action name="xemChiTietVaChinhSuaTaiXe" class="eCore.controller.Controller_TaiXe"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Lưu Tài Xế -->
+		<action name="luuDuLieuTaiXe" class="eCore.controller.Controller_TaiXe"
+			method="saveOrUpdate">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		
+		<!-- Xem chi tiet quản trị-->
+		<action name="xemChiTietQuanTri" class="eCore.controller.Controller_QuanTri"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Xem chi tiet va chinh sua quản trị-->
+		<action name="xemChiTietVaChinhSuaQuanTri" class="eCore.controller.Controller_QuanTri"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Lưu Quản Trị -->
+		<action name="luuDuLieuQuanTri" class="eCore.controller.Controller_QuanTri"
+			method="saveOrUpdate">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		<!-- Tải lại quản trị -->
+		<action name="taiLaiQuanTri" class="eCore.controller.Controller_QuanTri"
+			method="refresh">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Thêm mới Quản Trị  -->
+		<action name="themMoiQuanTri" class="eCore.controller.Controller_QuanTri"
+			method="addNew">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		
+		
+		<!-- Xem chi tiet hành khách -->
+		<action name="xemChiTietHanhKhach" class="eCore.controller.Controller_HanhKhach"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Xem chi tiet va chinh sua hành khách-->
+		<action name="xemChiTietVaChinhSuaHanhKhach" class="eCore.controller.Controller_HanhKhach"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Lưu Hành Khách -->
+		<action name="luuDuLieuHanhKhach" class="eCore.controller.Controller_HanhKhach"
+			method="saveOrUpdate">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		<!-- Tải lại hành khách -->
+		<action name="taiLaiHanhKhach" class="eCore.controller.Controller_HanhKhach"
+			method="refresh">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Thêm mới Hành Khách  -->
+		<action name="themMoiHanhKhach" class="eCore.controller.Controller_HanhKhach"
+			method="addNew">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		
+		
+		<!-- Xử lý chức năng -->
+		<!-- Tìm kiếm chức năng -->
+		<action name="timKiemChucNang" class="eCore.controller.Controller_ChucNang"
+			method="search">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Tải lại chức năng -->
+		<action name="taiLaiChucNang" class="eCore.controller.Controller_ChucNang"
+			method="refresh">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Thêm mới chức năng -->
+		<action name="themMoiChucNang" class="eCore.controller.Controller_ChucNang"
+			method="addNew">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Lưu chức năng -->
+		<action name="luuDuLieuChucNang" class="eCore.controller.Controller_ChucNang"
+			method="saveOrUpdate">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Xem chi tiet -->
+		<action name="xemChiTietChucNang" class="eCore.controller.Controller_ChucNang"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Xem chi tiet va chinh sua -->
+		<action name="xemChiTietVaChinhSuaChucNang" class="eCore.controller.Controller_ChucNang"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Xoa chức năng -->
+		<action name="deleteChucNang" class="eCore.controller.Controller_ChucNang"
+			method="delete">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		<!-- kết thúc xử lý chức năng -->
+		
+		<!-- Xử lý nhóm phân quyền -->
+		<!-- Tìm kiếm nhóm phân quyền -->
+		<action name="timKiemNhomPhanQuyen" class="eCore.controller.Controller_NhomPhanQuyen"
+			method="search">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Tải lại nhóm phân quyền -->
+		<action name="taiLaiNhomPhanQuyen" class="eCore.controller.Controller_NhomPhanQuyen"
+			method="refresh">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Thêm mới nhóm phân quyền -->
+		<action name="themMoiNhomPhanQuyen" class="eCore.controller.Controller_NhomPhanQuyen"
+			method="addNew">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Lưu nhóm phân quyền -->
+		<action name="luuDuLieuNhomPhanQuyen" class="eCore.controller.Controller_NhomPhanQuyen"
+			method="saveOrUpdate">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Xem chi tiet -->
+		<action name="xemChiTietNhomPhanQuyen" class="eCore.controller.Controller_NhomPhanQuyen"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Xem chi tiet va chinh sua -->
+		<action name="xemChiTietVaChinhSuaNhomPhanQuyen" class="eCore.controller.Controller_NhomPhanQuyen"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Xoa nhóm phân quyền -->
+		<action name="deleteNhomPhanQuyen" class="eCore.controller.Controller_NhomPhanQuyen"
+			method="delete">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		<!-- kết thúc xử lý nhóm phân quyền -->
+		
+		
+		
+		
+		
+		<!-- Xem chi tiet -->
+		<action name="xemChiTietThanhVien" class="eCore.controller.Controller_ThanhVien"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Xem chi tiet va chinh sua -->
+		<action name="xemChiTietVaChinhSuaThanhVien" class="eCore.controller.Controller_ThanhVien"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		
+		
+		<!-- Xem chi tiet -->
+		<action name="xemChiTietXe" class="eCore.controller.Controller_Xe"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Xem chi tiet va chinh sua -->
+		<action name="xemChiTietVaChinhSuaXe" class="eCore.controller.Controller_Xe"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+	</package>
+</struts>

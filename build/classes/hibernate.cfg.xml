@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="QuanLyDaoTao">
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">abc</property>
+		<property name="hibernate.enable_lazy_load_no_trans">true</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/datxevs3</property>
+		<property name="hibernate.connection.characterEncoding">utf8</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="connection.autoReconnect">true</property>
+		<property name="connection.autoReconnectForPools">true</property>
+		<property name="connection.is-connection-validation-required">true</property>
+		<property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="c3p0.min_size">0</property>
+		<property name="c3p0.max_size">30</property>
+		<property name="c3p0.timeout">600</property>
+		<property name="c3p0.max_statements">0</property>
+		<property name="c3p0.acquire_increment">1</property>
+		<property name="c3p0.idle_test_period">60</property>
+
+		<!-- Quan ly core -->
+		
+		<mapping class="eCore.model.TaiXe" />
+		
+		
+		<mapping class="eCore.model.ChucNang" />
+		<mapping class="eCore.model.NhomPhanQuyen" />
+		<mapping class="eCore.model.TaiKhoan" />
+		<mapping class="eCore.model.TaiKhoanTaiXe" />
+		<mapping class="eCore.model.QuanTri" />
+		<mapping class="eCore.model.TaiKhoanQuanTri" />
+		<mapping class="eCore.model.TaiKhoanHanhKhach" />
+		<mapping class="eCore.model.HanhKhach" />
+		<mapping class="eCore.model.ThanhVien" />
+		<mapping class="eCore.model.TaiKhoanThanhVien" />
+		<mapping class="eCore.model.Xe" />
+		
+		
+		
+		
+		<!-- ket thuc quan ly core -->
+
+ 		<!-- Quan ly eSM1 --> 
+<!-- 		<mapping class="eSm1.model.DotNhapHoc"/> -->
+<!-- 		<mapping class="eSm1.model.SinhVienNhapHoc"/> -->
+<!-- 		<mapping class="eSm1.model.QuanHeGiaDinhSinhVienNhapHoc"/> -->
+<!-- 		<mapping class="eSm1.model.HoSoNhapHoc"/> -->
+<!-- 		<mapping class="eSm1.model.ThongTinThuTienBaoHiem"/> -->
+<!-- 		<mapping class="eSm1.model.ThongTinThuTienNhapHoc"/> -->
+		<!-- ket thuc quan ly eSM1 --> 
+		
+		<!-- Quan ly eSM2 --> 
+<!-- 		<mapping class="eSm2.model.DotKhamSucKhoe"/> -->
+<!-- 		<mapping class="eSm2.model.ThongTinKhamSucKhoe"/> -->
+<!-- 		<mapping class="eSm2.model.ThongTinKhamSucKhoeGiangVien"/> -->
+<!-- 		<mapping class="eSm2.model.ThongTinKhamSucKhoeSinhVien"/> -->
+<!-- 		<mapping class="eSm2.model.ThongTinKhamSucKhoeSinhVienNhapHoc"/> -->
+ 		<!-- ket thuc quan ly eSM2 -->
+
+ 		<!-- Quan ly eSm3 --> 
+<!-- 		<mapping class="eSm3.model.CoSoKhamChuaBenh"/> -->
+ 		<!-- ket thuc quan ly eSm3 -->
+		
+	</session-factory>
+</hibernate-configuration>
