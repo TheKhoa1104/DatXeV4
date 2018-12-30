@@ -117,7 +117,12 @@
 			<result name="SUCCESS">/index.jsp</result>
 			<result name="FAIL">/index.jsp</result>
 		</action>
-		
+		<!-- Xoa hành khách -->
+		<action name="deleteHanhKhach" class="eCore.controller.Controller_HanhKhach"
+			method="delete">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
 		
 		
 		<!-- Xử lý chức năng -->

@@ -115,7 +115,7 @@
 								</div>
 								<div class="form-group">
 									<label>Số điện thoại di động</label> <input
-										class="form-control" name="sDT"
+										class="form-control" name="soDienThoaiDiDong"
 										value="<%=(obj != null && obj.getSoDienThoaiDiDong() != null ? obj.getSoDienThoaiDiDong() : "")%>"
 										<%=(modeView ? " readonly " : "")%>>
 								</div>
