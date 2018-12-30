@@ -39,6 +39,7 @@
 		<mapping class="eCore.model.ThanhVien" />
 		<mapping class="eCore.model.TaiKhoanThanhVien" />
 		<mapping class="eCore.model.Xe" />
+		<mapping class="eCore.model.HanhTrinh" />
 		
 		
 		

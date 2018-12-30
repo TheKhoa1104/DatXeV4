@@ -44,6 +44,25 @@
 // 		CN_QuanLyThongTinCoBan.setChucNangCha(null);
 // 		daochucnang.saveOrUpdate(CN_QuanLyThongTinCoBan);
 		
+		ChucNang DatXe = new ChucNang();
+		DatXe.setMaChucNang("CN_QuanLyDatChuyen");
+		DatXe.setDuongDan("");
+		DatXe.setHinhAnh("fa fa-wrench");
+		DatXe.setTenHienThi("Đặt chuyến");
+		DatXe.setChucNangCha(null);
+		daochucnang.saveOrUpdate(DatXe);
+		
+		ChucNang DatXe1 = new ChucNang();
+		DatXe1.setMaChucNang("CN_QuanLyDatChuyenDi");
+		DatXe1.setDuongDan("map.jsp");
+		DatXe1.setHinhAnh("fa fa-wrench");
+		DatXe1.setTenHienThi("Đặt chuyến đi");
+		DatXe1.setChucNangCha(DatXe);
+		daochucnang.saveOrUpdate(DatXe1);
+		
+
+
+
 		
 		ChucNang CN_QuanLyTaiXe = new ChucNang();
 		CN_QuanLyTaiXe.setMaChucNang("CN_QuanLyTaiXe");
@@ -191,6 +210,27 @@
 		
 		
 		
+		
+		
+		//HanhTrinhHanhKhach
+		ChucNang CN_HanhTrinh = new ChucNang();
+		CN_HanhTrinh.setMaChucNang("CN_HanhTrinh");
+		CN_HanhTrinh.setDuongDan("");
+		CN_HanhTrinh.setHinhAnh("fa fa-wrench");
+		CN_HanhTrinh.setTenHienThi("Quản lý hành trình");
+		CN_HanhTrinh.setChucNangCha(null);
+		daochucnang.saveOrUpdate(CN_HanhTrinh);
+		
+		ChucNang CN_HanhTrinhHanhKhach = new ChucNang();
+		CN_HanhTrinhHanhKhach.setMaChucNang("CN_HanhTrinhHanhKhach");
+		CN_HanhTrinhHanhKhach.setDuongDan("pages/hanhtrinhs.jsp");
+		CN_HanhTrinhHanhKhach.setHinhAnh("fa fa-list-ol");
+		CN_HanhTrinhHanhKhach.setTenHienThi("Quản lý thông tin hành trình khách");
+		CN_HanhTrinhHanhKhach.setChucNangCha(CN_HanhTrinh);
+		daochucnang.saveOrUpdate(CN_HanhTrinhHanhKhach);
+		
+		
+		
 // 		// quản lý thành viên
 // 		ChucNang CN_QuanLyThanhVien = new ChucNang();
 // 		CN_QuanLyThanhVien.setMaChucNang("QuanLyThanhVien");
@@ -335,6 +375,10 @@
 		cn3.add(CN_QuanLyHanhKhach);
 		cn3.add(CN_QuanLyThongTinHanhKhach);
 		cn3.add(CN_KeKhaiThongTinHanhKhach);
+		cn3.add(DatXe);
+		cn3.add(DatXe1);
+		cn3.add(CN_HanhTrinh);
+		cn3.add(CN_HanhTrinhHanhKhach);
 // 		cn3.add(CN_QuanLyThongTinCoBan);
 // 		cn3.add(CN_QuanLyThongTinHanhKhach);
 // 		cn3.add(CN_KeKhaiThongTinHanhKhach);

@@ -258,6 +258,26 @@
 		
 		
 		
+		<!-- Xem chi tiet hanh trinh khach-->
+		<action name="xemChiTietHanhTrinh" class="eCore.controller.Controller_HanhTrinh"
+			method="viewDetail">
+			<result name="SUCCESS">pages/hanhkhachs.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+
+		<!-- Xem chi tiet va chinh sua hanhtrinh khach-->
+		<action name="xemChiTietVaChinhSuaHanhTrinh" class="eCore.controller.Controller_HanhTrinh"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">pages/hanhkhachs.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Tải lại thông tin hành trình -->
+		<action name="taiLaiHanhTrinh" class="eCore.controller.Controller_HanhTrinh"
+			method="refresh">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
 		
 		
 	</package>
