@@ -203,7 +203,7 @@
 							<div class="panel-footer" style="text-align: left;">
 								<div class="col-md-12"></div>
 								<div class="col-md-12">
-<%-- 									<%@ include file="../../datxePartial/processform.jsp"%> --%>
+									<%@ include file="../../datxePartial/processform.jsp"%>
 
 								</div>
 							</div>
