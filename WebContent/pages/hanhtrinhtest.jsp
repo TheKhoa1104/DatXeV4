@@ -81,7 +81,7 @@
     <div>
     <b>Mã: </b>
     <input class="form-control"
-										name="maTest" 
+		name="maTest" 
 										value="<%=(obj != null ? obj.getMaTest() : System.currentTimeMillis())%>"
 										readonly required="required">
    <br> <b>Start:</b>

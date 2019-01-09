@@ -44,7 +44,7 @@
         text-align: left;
         padding-top: 0; 
       }
-       #directions-panel {
+       #chiTiet {
          margin-top: 10px; 
          background-color: #FFEE77; 
          padding: 10px; 
@@ -74,7 +74,7 @@
     <br>
       <input type="submit" id="submit">
     </div>
-    <div id="directions-panel"></div>
+    <div id="chiTiet"></div>
     </div>
     <script>
       function initMap() {
@@ -119,7 +119,7 @@
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
             var route = response.routes[0];
-            var summaryPanel = document.getElementById('directions-panel');
+            var summaryPanel = document.getElementById('chiTiet');
             summaryPanel.innerHTML = '';
             // For each route, display summary information.
             for (var i = 0; i < route.legs.length; i++) {

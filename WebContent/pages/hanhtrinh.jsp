@@ -66,14 +66,15 @@
 				<div class="panel-heading" style="text-align: left;">
 
 
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-md-5"> -->
-<%-- 							<p style="color: red; display: inline;"><%=msg%></p> --%>
-<!-- 						</div> -->
-<!-- 						<div class="col-md-7"> -->
-<%-- <%-- 							<%@ include file="../../datxePartial/processform.jsp"%> --%> --%>
-<!-- 						</div> -->
-<!-- 					</div> -->
+					<div class="row">
+						<div class="col-md-5">
+							<p style="color: red; display: inline;"><%=msg%></p>
+						</div>
+						<div class="col-md-7">
+							<%@ include file="../../datxePartial/processform.jsp"%>
+
+						</div>
+					</div>
 				</div>
 				<div class="panel-body">
 					<div class="row" style="padding: 10px">
@@ -93,8 +94,8 @@
 								<div class="form-group">
 									<label>Mã hành trình</label> <input class="form-control"
 										name="maHanhTrinh"
-										value="<%=(obj != null ? obj.getMaHanhTrinh() : "")%>"
-										<%=(modeView  ? " readonly " : "")%>>
+										value="<%=(obj != null ? obj.getMaHanhTrinh() : System.currentTimeMillis())%>"
+										readonly required="required">
 								</div>
 
 
@@ -102,19 +103,21 @@
 
 								<div class="form-group">
 									<label>Nơi Đi</label> <input id="noiDi" class="controls"
-										type="text" placeholder="Nhập điểm đi" 
-										> </input>
+										type="text"  
+										value="<%=(obj != null ? obj.getNoiDi() : "")%>"
+										<%=(modeView  ? " readonly " : "")%>> </input>
 								</div>
 
 
 								<div class="form-group">
 									<label>Nơi Đến </label> <input id="noiDen" class="controls"
-										type="text" placeholder="Nhập điểm đến"> </input>
+										type="text" value="<%=(obj != null ? obj.getNoiDen() : "")%>"
+										<%=(modeView  ? " readonly " : "")%>> </input>
 
 								</div>
 
 								<!-- 									<br> <input type="submit" id="submit"> -->
-<input type="submit" id="submit1">
+								<input type="submit" id="submit">
 								<div class="form-group">
 									<label>Thông tin chi tiết </label>
 									<div id="directions-panel"></div>
@@ -137,7 +140,7 @@
 										});
 										  directionsDisplay.setMap(map);
 
-									        document.getElementById('submit1').addEventListener('click', function() {
+									        document.getElementById('submit').addEventListener('click', function() {
 									          calculateAndDisplayRoute(directionsService, directionsDisplay);
 									        });
 										
@@ -201,6 +204,7 @@
 								<div class="col-md-12"></div>
 								<div class="col-md-12">
 <%-- 									<%@ include file="../../datxePartial/processform.jsp"%> --%>
+
 								</div>
 							</div>
 						</div>

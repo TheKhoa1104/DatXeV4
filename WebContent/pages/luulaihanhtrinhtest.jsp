@@ -97,7 +97,8 @@ html, body {
 			<input id="noiDen" class="controls" type="text"
 				placeholder="Nhập điểm đến"
 				value="<%=(obj != null && obj.getNoiDen() != null ? obj.getNoiDen() : "")%>"
-				<%=(modeView ? " readonly " : "")%>> </input>  <br> <input
+				<%=(modeView ? " readonly " : "")%>> </input> 
+				 <br> <input
 				type="submit" id="submit">
 		</div>
 		<div id="chiTiet"></div>
