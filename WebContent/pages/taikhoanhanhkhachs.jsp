@@ -5,8 +5,8 @@
 <%
 	String tenLop = "TaiKhoanHanhKhach";
 	String tenTrang = "Quản lý Tài Khoản Hành Khách";
-	String[] tk_value = { "maDangNhap", "ngayTao", "loaiTaiKhoan", "hoVaTen", "email" };
-	String[] tk_show = { "Mã đăng nhập", "Ngày tạo", "Loại tài khoản", "Họ và tên", "Email" };
+	String[] tk_value = { "maDangNhap", "ngayTao", "loaiTaiKhoan", "hoTen", "email" };
+	String[] tk_show = { "Mã đăng nhập", "Ngày tạo", "Loại tài khoản", "Họ tên", "Email" };
 %>
 <%@ include file="../../datxePartial/code-header.jsp"%>
 <%
@@ -69,7 +69,8 @@
 						<td><%=obj.getLoaiTaiKhoan() != null ? obj.getLoaiTaiKhoan() : ""%></td>
 						<td><%=obj.isTrangThaiHoatDong() == true ? "Hoạt động" : "Không hoạt động"%></td>
 						<td><%=obj.getEmail() != null ? obj.getEmail() : ""%></td>
-						<td><%=obj != null && obj.getHanhKhach() != null ? obj.getHanhKhach().getHoTen() : ""%></td>
+						<td><%=obj.getHoVaTen() != null ? obj.getHoVaTen() : ""%></td>
+<%-- 						<td><%=obj != null && obj.getHanhKhach() != null ? obj.getHanhKhach().getHoTen() : ""%></td> --%>
 
 						<td style="text-align: center;"><%@ include
 								file="../../datxePartial/menupullcuadoituong.jsp"%></td>

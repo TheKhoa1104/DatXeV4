@@ -50,7 +50,7 @@
 					<tr>
 						<th>Mã hành khách</th>
 						<th>Họ tên</th>
-<!-- 						<th>Hình ảnh</th> -->
+						<th>Hình ảnh</th>
 <!-- 						<th>Ngày sinh</th> -->
 						<th>Giới tính</th>
 						<th>Nơi sinh</th>
@@ -77,7 +77,7 @@
 					<tr class="odd gradeX">
 						<td><%=obj.getMaQuanTri()%></td>
 						<td><%=obj.getHoTen() != null ? obj.getHoTen() : ""%></td>
-<%-- 						<td><%=obj.getHinhAnh()!=null?obj.getHinhAnh():""%></td> --%>
+						<td><%=obj.getHinhAnh()!=null?obj.getHinhAnh():""%></td>
 <%-- 						<td><%=obj.getNgaySinh()!=null?obj.getNgaySinh():""%></td> --%>
 						<td><%=obj.getGioiTinh()!=null?obj.getGioiTinh():""%></td>
 						<td><%=obj.getNoiSinh()!=null?obj.getNoiSinh():""%></td>

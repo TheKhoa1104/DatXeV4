@@ -131,7 +131,7 @@ html, body {
 				origin : document.getElementById('start').value,
 				destination : document.getElementById('end').value,
 			//	waypoints : waypts,
-			departureTime: Date,
+// 			departureTime: Date,
 				optimizeWaypoints : true,
 				travelMode : 'DRIVING'
 			}, function(response, status) {
@@ -153,8 +153,8 @@ html, body {
 						summaryPanel.innerHTML += route.legs[i].distance.text
 								+ '<br>' + '<b>Thành tiền: </b>';
  						summaryPanel.innerHTML += (((route.legs[i].distance.value)*0.001).toFixed(1))*7000
- 								+ '<b> VNĐ' + '<br><b>Thời gian: </b>';					
-  						summaryPanel.innerHTML += route.legs[i].duration.text;
+ 								+ '<b> VNĐ' ;					
+//   						summaryPanel.innerHTML += route.legs[i].duration.text;
 						
 								
 					}

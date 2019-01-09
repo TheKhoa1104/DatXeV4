@@ -26,8 +26,6 @@
 		<!-- Quan ly core -->
 		
 		<mapping class="eCore.model.TaiXe" />
-		
-		
 		<mapping class="eCore.model.ChucNang" />
 		<mapping class="eCore.model.NhomPhanQuyen" />
 		<mapping class="eCore.model.TaiKhoan" />
@@ -40,6 +38,8 @@
 		<mapping class="eCore.model.TaiKhoanThanhVien" />
 		<mapping class="eCore.model.Xe" />
 		<mapping class="eCore.model.HanhTrinh" />
+		<mapping class="eCore.model.HanhTrinhTaiXe" />
+		<mapping class="eCore.model.HanhTrinhTest" />
 		
 		
 		

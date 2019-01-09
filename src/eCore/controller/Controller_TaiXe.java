@@ -39,6 +39,31 @@ public class Controller_TaiXe extends TaiXe implements ZEController{
 	public String getTimKiemTheo() {
 		return timKiemTheo;
 	}
+	
+	public String getDuongDanTrang() {
+		return duongDanTrang;
+	}
+
+	public void setDuongDanTrang(String duongDanTrang) {
+		this.duongDanTrang = duongDanTrang;
+	}
+
+	public String getDuongDanTrangView() {
+		return duongDanTrangView;
+	}
+
+	public void setDuongDanTrangView(String duongDanTrangView) {
+		this.duongDanTrangView = duongDanTrangView;
+	}
+
+	public String getTenCotTimDoiTuong() {
+		return tenCotTimDoiTuong;
+	}
+
+	public void setTenCotTimDoiTuong(String tenCotTimDoiTuong) {
+		this.tenCotTimDoiTuong = tenCotTimDoiTuong;
+	}
+
 	public void setTimKiemTheo(String timKiemTheo) {
 		this.timKiemTheo = timKiemTheo;
 	}

@@ -143,26 +143,26 @@ public class Controller_Xe extends Xe implements ZEController {
 	public String saveOrUpdate() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpSession session = request.getSession();
-		try {
-			String s ="";
-			if (!myFileName.equals("")) {
-				if (myFile != null) {
-					myFileName = getMaXe() + myFileFileName.substring(myFileFileName.lastIndexOf("."));
-					File destFile = new File(myFolder, myFileName);
-					s = destFile + "";
-					FileUtils.copyFile(myFile, destFile);
-					System.out.println(destFile.toString());
-				} else {
-					s = getS_hinhAnh();
-				}
-			} else
-				s = getS_hinhAnh();
+//		try {
+//			String s ="";
+//			if (!myFileName.equals("")) {
+//				if (myFile != null) {
+//					myFileName = getMaXe() + myFileFileName.substring(myFileFileName.lastIndexOf("."));
+//					File destFile = new File(myFolder, myFileName);
+//					s = destFile + "";
+//					FileUtils.copyFile(myFile, destFile);
+//					System.out.println(destFile.toString());
+//				} else {
+//					s = getS_hinhAnh();
+//				}
+//			} else
+//				s = getS_hinhAnh();
 			Xe obj = new Xe();
 			obj.maXe = getMaXe();
 			obj.taiXe = getTaiXe();
 			obj.bienSo = getBienSo();
 			obj.loaiXe = getLoaiXe();
-			obj.hinhAnh = s.substring(s.lastIndexOf("\\")+1, s.length());
+//			obj.hinhAnh = s.substring(s.lastIndexOf("\\")+1, s.length());
 			obj.moTa = getMoTa();
 			obj.thoiGianCapNhat = new Date();
 			if (dao.saveOrUpdate(obj)) {
@@ -174,10 +174,10 @@ public class Controller_Xe extends Xe implements ZEController {
 			} else {
 				return "FAIL";
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "FAIL";
-		}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return "FAIL";
+//		}
 	}
 	@Override
 	public String delete() {

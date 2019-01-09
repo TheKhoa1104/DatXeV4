@@ -58,10 +58,10 @@
 
 </style>
 <body>
-	<img src="content/images/car2	.jpg" id="bg" alt="">
+	<img src="content/images/car	.jpg" id="bg" alt="">
 	<div class="container-fluid" style="margin: 0; margin-top: 20;">
 		<div class="row" style="padding-top: 30px;">
-			<div class="col-md-5">
+			<div class="col-xs-4 col-xs-offset-8">
 				<div class="login-panel panel panel-default" style="margin: 0px;">
 					<div class="panel-heading" style="text-align: center;">
 						<p class="panel-title">

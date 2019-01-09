@@ -37,6 +37,31 @@ public class Controller_QuanTri extends QuanTri implements ZEController{
 	public String getTimKiemTheo() {
 		return timKiemTheo;
 	}
+	
+	public String getDuongDanTrang() {
+		return duongDanTrang;
+	}
+
+	public void setDuongDanTrang(String duongDanTrang) {
+		this.duongDanTrang = duongDanTrang;
+	}
+
+	public String getDuongDanTrangView() {
+		return duongDanTrangView;
+	}
+
+	public void setDuongDanTrangView(String duongDanTrangView) {
+		this.duongDanTrangView = duongDanTrangView;
+	}
+
+	public String getTenCotTimDoiTuong() {
+		return tenCotTimDoiTuong;
+	}
+
+	public void setTenCotTimDoiTuong(String tenCotTimDoiTuong) {
+		this.tenCotTimDoiTuong = tenCotTimDoiTuong;
+	}
+
 	public void setTimKiemTheo(String timKiemTheo) {
 		this.timKiemTheo = timKiemTheo;
 	}
@@ -146,24 +171,24 @@ public class Controller_QuanTri extends QuanTri implements ZEController{
 	public String saveOrUpdate() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpSession session = request.getSession();
-		try {
-			String s ="";
-			if (!myFileName.equals("")) {
-				if (myFile != null) {
-					myFileName = getMaQuanTri() + myFileFileName.substring(myFileFileName.lastIndexOf("."));
-					File destFile = new File(myFolder, myFileName);
-					s = destFile + "";
-					FileUtils.copyFile(myFile, destFile);
-					System.out.println(destFile.toString());
-				} else {
-					s = getS_hinhAnh();
-				}
-			} else
-				s = getS_hinhAnh();
+//		try {
+//			String s ="";
+//			if (!myFileName.equals("")) {
+//				if (myFile != null) {
+//					myFileName = getMaQuanTri() + myFileFileName.substring(myFileFileName.lastIndexOf("."));
+//					File destFile = new File(myFolder, myFileName);
+//					s = destFile + "";
+//					FileUtils.copyFile(myFile, destFile);
+//					System.out.println(destFile.toString());
+//				} else {
+//					s = getS_hinhAnh();
+//				}
+//			} else
+//				s = getS_hinhAnh();
 			QuanTri obj = new QuanTri();
 			obj.maQuanTri = getMaQuanTri();
 			obj.hoTen = getHoTen();
-			obj.hinhAnh = s.substring(s.lastIndexOf("\\") + 1, s.length());
+//			obj.hinhAnh = s.substring(s.lastIndexOf("\\") + 1, s.length());
 			obj.ngaySinh = getNgaySinh();
 			obj.gioiTinh = getGioiTinh();
 			obj.noiSinh = getNoiSinh();
@@ -186,10 +211,10 @@ public class Controller_QuanTri extends QuanTri implements ZEController{
 			} else {
 				return "FAIL";
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "FAIL";
-		}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return "FAIL";
+//		}
 
 	}
 	@Override

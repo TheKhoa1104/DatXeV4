@@ -2,6 +2,7 @@ package eCore.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -25,8 +26,8 @@ public class Controller_HanhTrinhTaiXe extends HanhTrinhTaiXe implements ZEContr
 	
 	String timKiemTheo;
 	String tuKhoa;
-	String duongDanTrang = "kTXCore/pages/hanhtrinhtaixes.jsp";
-	String duongDanTrangView = "kTXCore/pages/hanhtrinhtaixe.jsp";
+	String duongDanTrang = "pages/hanhtrinhtaixes.jsp";
+	String duongDanTrangView = "pages/hanhtrinhtaixe.jsp";
 	String tenCotTimDoiTuong = "maHanhTrinhTaiXe";
 	String maObj;
 	String s_ngayDi;
@@ -76,6 +77,10 @@ public class Controller_HanhTrinhTaiXe extends HanhTrinhTaiXe implements ZEContr
 	}
 	public void setS_thoiGian(String s_thoiGian) {
 		this.s_thoiGian = s_thoiGian;
+	}
+	
+	public Date getThoiGian() {
+		return Util_Date.stringToDate(getS_thoiGian());
 	}
 	public String getMaTaiXe() {
 		return maTaiXe;
@@ -140,7 +145,7 @@ public class Controller_HanhTrinhTaiXe extends HanhTrinhTaiXe implements ZEContr
 
 		session.setAttribute("mode", "viewDetail");
 
-		ArrayList<TaiXe> arr = dao.listByColumnLike(tenCotTimDoiTuong, maobj);
+		ArrayList<HanhTrinhTaiXe> arr = dao.listByColumnLike(tenCotTimDoiTuong, maobj);
 		if (arr.size() > 0) {
 			session.setAttribute("obj", arr.get(0));
 			session.setAttribute("p", duongDanTrangView);
@@ -157,7 +162,7 @@ public class Controller_HanhTrinhTaiXe extends HanhTrinhTaiXe implements ZEContr
 
 		String maobj = request.getParameter("maobj");
 		session.setAttribute("mode", "viewDetailAndEdit");
-		ArrayList<TaiXe> arr = dao.listByColumnLike(tenCotTimDoiTuong, maobj);
+		ArrayList<HanhTrinhTaiXe> arr = dao.listByColumnLike(tenCotTimDoiTuong, maobj);
 		if (arr.size() > 0) {
 			session.setAttribute("obj", arr.get(0));
 			session.setAttribute("p", duongDanTrangView);
@@ -215,7 +220,7 @@ public class Controller_HanhTrinhTaiXe extends HanhTrinhTaiXe implements ZEContr
 		HttpSession session = request.getSession();
 		String column = getTimKiemTheo();
 		String key = getTuKhoa();
-		ArrayList<HanhTrinhHanhKhach> arr = dao.listByColumnLike(column, key);
+		ArrayList<HanhTrinhTaiXe> arr = dao.listByColumnLike(column, key);
 		session.setAttribute("arr", arr);
 		session.setAttribute("checkTimKiem", "true");
 		session.setAttribute("p", duongDanTrang);

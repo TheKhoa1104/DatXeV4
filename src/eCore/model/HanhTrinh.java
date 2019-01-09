@@ -3,12 +3,16 @@ package eCore.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class HanhTrinh {
 	@Id
 	public String maHanhTrinh;
+	@OneToOne(fetch = FetchType.EAGER)
+	public HanhKhach hanhKhach;
 	public String noiDi;
 	public String noiDen;
 	public Date thoiGianCapNhat;
@@ -19,21 +23,30 @@ public class HanhTrinh {
 	}
 	/**
 	 * @param maHanhTrinh
+	 * @param hanhKhach
 	 * @param noiDi
 	 * @param noiDen
 	 * @param thoiGianCapNhat
 	 */
-	public HanhTrinh(String maHanhTrinh, String noiDi, String noiDen, Date thoiGianCapNhat) {
+	public HanhTrinh(String maHanhTrinh, HanhKhach hanhKhach, String noiDi, String noiDen, Date thoiGianCapNhat) {
 		this.maHanhTrinh = maHanhTrinh;
+		this.hanhKhach = hanhKhach;
 		this.noiDi = noiDi;
 		this.noiDen = noiDen;
 		this.thoiGianCapNhat = thoiGianCapNhat;
 	}
+	
 	public String getMaHanhTrinh() {
 		return maHanhTrinh;
 	}
 	public void setMaHanhTrinh(String maHanhTrinh) {
 		this.maHanhTrinh = maHanhTrinh;
+	}
+	public HanhKhach getHanhKhach() {
+		return hanhKhach;
+	}
+	public void setHanhKhach(HanhKhach hanhKhach) {
+		this.hanhKhach = hanhKhach;
 	}
 	public String getNoiDi() {
 		return noiDi;
@@ -57,6 +70,7 @@ public class HanhTrinh {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((hanhKhach == null) ? 0 : hanhKhach.hashCode());
 		result = prime * result + ((maHanhTrinh == null) ? 0 : maHanhTrinh.hashCode());
 		result = prime * result + ((noiDen == null) ? 0 : noiDen.hashCode());
 		result = prime * result + ((noiDi == null) ? 0 : noiDi.hashCode());
@@ -72,6 +86,11 @@ public class HanhTrinh {
 		if (getClass() != obj.getClass())
 			return false;
 		HanhTrinh other = (HanhTrinh) obj;
+		if (hanhKhach == null) {
+			if (other.hanhKhach != null)
+				return false;
+		} else if (!hanhKhach.equals(other.hanhKhach))
+			return false;
 		if (maHanhTrinh == null) {
 			if (other.maHanhTrinh != null)
 				return false;
@@ -96,9 +115,11 @@ public class HanhTrinh {
 	}
 	@Override
 	public String toString() {
-		return "HanhTrinh [maHanhTrinh=" + maHanhTrinh + ", noiDi=" + noiDi + ", noiDen=" + noiDen
-				+ ", thoiGianCapNhat=" + thoiGianCapNhat + "]";
+		return "HanhTrinh [maHanhTrinh=" + maHanhTrinh + ", hanhKhach=" + hanhKhach + ", noiDi=" + noiDi + ", noiDen="
+				+ noiDen + ", thoiGianCapNhat=" + thoiGianCapNhat + "]";
 	}
+
+	
 	
 	
 }

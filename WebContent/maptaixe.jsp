@@ -68,17 +68,31 @@ html, body {
 			<!--       <option value="New York, NY">New York, NY</option> -->
 			<!--       <option value="Miami, FL">Miami, FL</option> -->
 			<!--     </select> -->
-<!-- 			<br> <b>Waypoints:</b> <br> <i>(Ctrl+Click or Cmd+Click -->
-				<!-- 				for multiple selection)</i> <br> <select id="waypoints" -->
-<!-- 				class="controls" type="text" placeholder="Search Box"> -->
-<!-- 				<option value="quan 2">Quận 2</option> -->
-<!-- 				<option value="toronto, ont">Toronto, ONT</option> -->
-<!-- 				<option value="chicago, il">Chicago</option> -->
-<!-- 				<option value="winnipeg, mb">Winnipeg</option> -->
-<!-- 				<option value="fargo, nd">Fargo</option> -->
-<!-- 				<option value="calgary, ab">Calgary</option> -->
-<!-- 				<option value="spokane, wa">Spokane</option> -->
-				 </input> 
+			<br> <b>Waypoints:</b> <br> <i>(Ctrl+Click or Cmd+Click
+								for multiple selection)</i> <br> 
+				 <select multiple id="waypoints">
+      <option value="Quan 2">Quan 2</option>
+      <option value="toronto, ont">Toronto, ONT</option>
+      <option value="chicago, il">Chicago</option>
+      <option value="winnipeg, mb">Winnipeg</option>
+      <option value="fargo, nd">Fargo</option>
+      <option value="calgary, ab">Calgary</option>
+      <option value="spokane, wa">Spokane</option>
+    </select>
+    
+    
+    
+    <br> <b>Waypoints:</b> <br> <i>(Ctrl+Click or Cmd+Click
+								for multiple selection)</i> <br> 
+				 <select multiple id="waypoints">
+      <option value="Quan 3">Quan 3</option>
+      <option value="toronto, ont">Toronto, ONT</option>
+      <option value="chicago, il">Chicago</option>
+      <option value="winnipeg, mb">Winnipeg</option>
+      <option value="fargo, nd">Fargo</option>
+      <option value="calgary, ab">Calgary</option>
+      <option value="spokane, wa">Spokane</option>
+    </select>
 				<br> <b>Nơi đến:</b>
 				<input id="end" class="controls" class="controls" type="text"
 				placeholder="Nhập điểm đến"> <!--       <option value="Da Lat">Vancouver, BC</option> -->
@@ -116,21 +130,21 @@ html, body {
 		}
 
 		function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-		//	var waypts = [];
-		//	var checkboxArray = document.getElementById('waypoints');
-		//	for (var i = 0; i < checkboxArray.length; i++) {
-		//		if (checkboxArray.options[i].selected) {
-		//			waypts.push({
-		//				location : checkboxArray[i].value,
-		//				stopover : true
-		//			});
-		//		}
-		//	}
+			var waypts = [];
+			var checkboxArray = document.getElementById('waypoints');
+			for (var i = 0; i < checkboxArray.length; i++) {
+				if (checkboxArray.options[i].selected) {
+					waypts.push({
+						location : checkboxArray[i].value,
+						stopover : true
+					});
+				}
+			}
 
 			directionsService.route({
 				origin : document.getElementById('start').value,
 				destination : document.getElementById('end').value,
-			//	waypoints : waypts,
+				waypoints : waypts,
 				optimizeWaypoints : true,
 				travelMode : 'DRIVING'
 			}, function(response, status) {

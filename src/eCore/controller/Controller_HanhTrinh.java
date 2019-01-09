@@ -15,6 +15,7 @@ import eCore.model.HanhKhach;
 import eCore.model.HanhTrinh;
 import eCore.model.TaiXe;
 import eCore.model.Xe;
+import eCore.modelDao.DAO_HanhKhach;
 import eCore.modelDao.DAO_HanhTrinh;
 
 public class Controller_HanhTrinh extends HanhTrinh implements ZEController{
@@ -26,7 +27,7 @@ String duongDanTrang = "pages/hanhtrinhs.jsp";
 String duongDanTrangView = "pages/hanhtrinh.jsp";
 String tenCotTimDoiTuong = "maHanhTrinh";
 String maObj;
-
+String maHanhKhach;
 
 File myFile;
 String myFileContentType;
@@ -35,6 +36,22 @@ String myFileName;
 String myFolder;
 public String getTimKiemTheo() {
 	return timKiemTheo;
+}
+
+public String getMaHanhKhach() {
+	return maHanhKhach;
+}
+
+public void setMaHanhKhach(String maHanhKhach) {
+	this.maHanhKhach = maHanhKhach;
+}
+public HanhKhach getHanhKhach() {
+	ObjectDAO dao_hanhkhach = new DAO_HanhKhach();
+	ArrayList<HanhKhach> list_hanhkhach = dao_hanhkhach.listByColumns("maHanhKhach", getMaHanhKhach());
+	if (list_hanhkhach.size() > 0)
+		return list_hanhkhach.get(0);
+	else
+		return null;
 }
 public void setTimKiemTheo(String timKiemTheo) {
 	this.timKiemTheo = timKiemTheo;
@@ -139,6 +156,7 @@ public String saveOrUpdate() {
 
 		HanhTrinh obj = new HanhTrinh();
 		obj.maHanhTrinh = getMaHanhTrinh();
+		obj.hanhKhach = getHanhKhach();
 		obj.noiDi = getNoiDi();
 		obj.noiDen = getNoiDen();
 		obj.thoiGianCapNhat = new Date();

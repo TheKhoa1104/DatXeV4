@@ -74,7 +74,7 @@ String[] tk_show = {"Mã Tài Xế", "Họ Tên", "Ngày Sinh", "Giới Ti�
 									<label>Họ và tên</label> <input class="form-control"
 										name="tenTaiXe"
 										value="<%=(obj != null && obj.getHoTen() != null ? obj.getHoTen() : "")%>"
-										<%=(modeView || modeEdit ? " readonly " : "")%>>
+										<%=(modeView ? " readonly " : "")%>>
 								</div>
 							</div>
 							<div class="col-lg-4">
@@ -83,7 +83,7 @@ String[] tk_show = {"Mã Tài Xế", "Họ Tên", "Ngày Sinh", "Giới Ti�
 										name="myFile"
 										value="<%=(obj != null && obj.getHinhAnh() != null ? obj.getHinhAnh() : "")%>"
 										type="<%=(modeView ? "hidden" : "file")%>"><img
-										src="<%=obj != null && obj.getHinhAnh() != null && modeView ? "kTXCore/images/taixes/" + obj.getHinhAnh()
+										src="<%=obj != null && obj.getHinhAnh() != null && modeView ? "images/taixe/" + obj.getHinhAnh()
 					: ""%>"
 										height="<%=modeView ? 135 : 1%>"
 										width="<%=modeView ? 135 : 1%>">
@@ -153,14 +153,14 @@ String[] tk_show = {"Mã Tài Xế", "Họ Tên", "Ngày Sinh", "Giới Ti�
 									<label>Số điện thoại</label> <input class="form-control"
 										name="soDienThoaiDiDong"
 										value="<%=(obj != null && obj.getSoDienThoaiDiDong() != null ? obj.getSoDienThoaiDiDong() : "")%>"
-										<%=(modeView || modeEdit ? " readonly " : "")%>>
+										<%=(modeView  ? " readonly " : "")%>>
 								</div>
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
 									<label>Email</label> <input class="form-control" name="email" r
 										value="<%=(obj != null ? obj.getEmail() : "")%>"
-										<%=(modeView || modeEdit ? " readonly " : "")%>>
+										<%=(modeView  ? " readonly " : "")%>>
 								</div>
 							</div>
 							<div class="col-lg-4">
@@ -168,7 +168,7 @@ String[] tk_show = {"Mã Tài Xế", "Họ Tên", "Ngày Sinh", "Giới Ti�
 									<label>Địa chỉ</label> <input class="form-control"
 										name="diaChi" r
 										value="<%=(obj != null ? obj.getDiaChi() : "")%>"
-										<%=(modeView || modeEdit ? " readonly " : "")%>>
+										<%=(modeView  ? " readonly " : "")%>>
 								</div>
 							</div>
 							<div class="col-lg-4">
@@ -178,6 +178,11 @@ String[] tk_show = {"Mã Tài Xế", "Họ Tên", "Ngày Sinh", "Giới Ti�
 										name="ghiChu" <%=(modeView ? " disabled " : "")%>><%=(obj != null && obj.getGhiChu() != null ? obj.getGhiChu() : "")%></textarea>
 								</div>
 							</div>
+							<input type="hidden" name="s_hinhAnh"
+							value="<%=obj != null && obj.getHinhAnh() != null ? obj.getHinhAnh() : ""%>">
+							<input type="hidden" id="myFileName" name="myFileName"></input> <input
+							type="hidden" name="myFolder"
+							value="<%=request.getRealPath("images/taixe")%>" />
 							<div class="panel-footer" style="text-align: left;">
 								<div class="col-md-12"></div>
 								<div class="col-md-12">

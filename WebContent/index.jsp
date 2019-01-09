@@ -47,7 +47,7 @@
 	display: block;
 	width: 100%;
 	border: none;
-	background-color: #4CAF50;
+	background-color: 9DB29D;
 	color: white;
 	padding: 14px 28px;
 	font-size: 16px;
@@ -69,22 +69,22 @@
     <![endif]-->
 
 </head>
-<%-- <% --%>
-// 	// Kiểm tra đã đăng nhập
-// 	// Nếu chưa đăng nhập => chuyển login.jsp
-// 	// Thiện có thêm điều kiện kiểm tra phải là sinh viên nhập học đăng nhập không
-// 	String maDangNhap = session.getAttribute("maDangNhap") + "";
-// // 	String sVNH = session.getAttribute("xacThucSVNH") + "";
-// 	if (maDangNhap.equals("null") ) {
-// 		response.sendRedirect("login.jsp");
-// 	}
+
+<!--  Kiểm tra đã đăng nhập -->
+<!-- Nếu chưa đăng nhập => chuyển login.jsp -->
+<!-- Thiện có thêm điều kiện kiểm tra phải là sinh viên nhập học đăng nhập không -->
+<!-- String maDangNhap = session.getAttribute("maDangNhap") + ""; -->
+<!-- String sVNH = session.getAttribute("xacThucSVNH") + ""; -->
+<!-- if (maDangNhap.equals("null") ) { -->
+<!-- 		response.sendRedirect("login.jsp"); -->
+<!-- 	} -->
 	
-<%-- %> --%>
+
 <body>
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
-		<div class="navbar-header" style="background-color: #e60000">
+		<div class="navbar-header" style="background-color: #c1b6b6">
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
 				aria-controls="navbar">
@@ -95,7 +95,7 @@
 			<a class="navbar-brand" href="index.jsp" style="color: white">
 				&nbsp; <img src="content/images/logo.png"
 				style="display: inline-block;" width="30px" height="30px" /> <span
-				style="display: inline-block;"> UTC2 Smart 1.0 </span>
+				style="display: inline-block;"> Đặt Xe 1.0 </span>
 			</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse"
@@ -103,21 +103,33 @@
 			<ul class="nav  navbar-nav navbar-dark bg-primary text-white">
 
 				<%=session.getAttribute("chucNangs")%>
-
-				<li class="dropdown"><a class="dropdown-toggle"
-					style="color: white;" data-toggle="dropdown" role="button"
-					aria-haspopup="true" aria-expanded="false" href=index.jsp?p=><i
-						class="fa fa-user"></i> <span class="masked"> Tài khoản</a>
+				<li class="dropdown">
+				<a class="dropdown-toggle" style="color: white;" data-toggle="dropdown" role="button"
+					aria-haspopup="true" aria-expanded="false" href=index.jsp?p=>
+					
+					
+					<i class="fa fa-user"></i> 
+					
+					
+					<span class="masked"> Tài khoản</span>
 					<ul class="dropdown-menu">
 						<!--thiện có sửa lại kiểm tra có phải sinh viên nhập học đăng nhập không -->
-						<li><a
-							href="index.jsp?p=pages/doimatkhau.jsp"><i
-								class="glyphicon glyphicon-refresh"></i> &nbsp;&nbsp;Đổi mật
-								khẩu </a></li>
-						<li><a
-							href=<%= "dangXuat.action"%>><i
-								class="fa fa-users"></i> &nbsp;&nbsp;Đăng xuất </a></li>
-					</ul></li>
+						<li>
+							<a
+							href="index.jsp?p=pages/doimatkhau.jsp">
+								<i class="glyphicon glyphicon-refresh"></i> &nbsp;&nbsp;Đổi mật khẩu 
+							</a>
+						</li>
+						<li>
+							<a
+							href=<%= "dangXuat.action"%>>
+								<i class="fa fa-users"></i> &nbsp;&nbsp;Đăng xuất 
+							</a>
+						</li>
+					</ul>
+				</li>
+			
+			
 			</ul>
 		</div>
 		<!--/.nav-collapse -->

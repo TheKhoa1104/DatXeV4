@@ -1,15 +1,17 @@
 <%@page import="eCore.util.Util_Date"%>
 <%@page import="eCore.model.QuanTri"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-String tenlop = "QuanTri";
-String tenTrang = "Quản trị";
-String trangDanhSach = "index.jsp?p=pages/quantris.jsp";
-String[] tk_value = {"maQuanTri", "hoTen", "ngaySinh", "gioiTinh", "noiSinh", "queQuan", "danToc", "tonGiao", "diaChi", "cMND", "email","soDienThoaiDiDong",  "soTaiKhoan"};
-String[] tk_show = {"Mã Quản Trị", "Họ Tên", "Ngày Sinh", "Giới Tính", "Nới Sinh", "Quê Quán", "Dân Tộc", "Tôn Giáo", "Địa Chỉ", "Số CMND","Email","Số Điện Thoại Di động" , "Số Tài Khoản"};
-	
+	String tenlop = "QuanTri";
+	String tenTrang = "Quản trị";
+	String trangDanhSach = "index.jsp?p=pages/quantris.jsp";
+	String[] tk_value = {"maQuanTri", "hoTen", "ngaySinh", "gioiTinh", "noiSinh", "queQuan", "danToc",
+			"tonGiao", "diaChi", "cMND", "email", "soDienThoaiDiDong", "soTaiKhoan"};
+	String[] tk_show = {"Mã Quản Trị", "Họ Tên", "Ngày Sinh", "Giới Tính", "Nới Sinh", "Quê Quán",
+			"Dân Tộc", "Tôn Giáo", "Địa Chỉ", "Số CMND", "Email", "Số Điện Thoại Di động",
+			"Số Tài Khoản"};
 %>
 <%@ include file="../datxePartial/code-header.jsp"%>
 <%
@@ -65,16 +67,16 @@ String[] tk_show = {"Mã Quản Trị", "Họ Tên", "Ngày Sinh", "Giới Ti
 							<div class="col-lg-4">
 								<div class="form-group">
 									<label>Mã quản trị</label> <input class="form-control"
-										name="maQuanTri" r value="<%=(obj != null ? obj.getMaQuanTri() : "")%>"
+										name="maQuanTri" 
+										value="<%=(obj != null ? obj.getMaQuanTri() : "")%>"
 										<%=(modeView || modeEdit ? " readonly " : "")%>>
 								</div>
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label>Họ và tên</label> <input class="form-control"
-										name="tenQuanTri"
+									<label>Họ tên</label> <input class="form-control" name="hoTen"
 										value="<%=(obj != null && obj.getHoTen() != null ? obj.getHoTen() : "")%>"
-										<%=(modeView || modeEdit ? " readonly " : "")%>>
+										<%=(modeView ? " readonly " : "")%>>
 								</div>
 							</div>
 							<div class="col-lg-4">
@@ -83,7 +85,7 @@ String[] tk_show = {"Mã Quản Trị", "Họ Tên", "Ngày Sinh", "Giới Ti
 										name="myFile"
 										value="<%=(obj != null && obj.getHinhAnh() != null ? obj.getHinhAnh() : "")%>"
 										type="<%=(modeView ? "hidden" : "file")%>"><img
-										src="<%=obj != null && obj.getHinhAnh() != null && modeView ? "kTXCore/images/taixes/" + obj.getHinhAnh()
+										src="<%=obj != null && obj.getHinhAnh() != null && modeView ? "images/quantri/" + obj.getHinhAnh()
 					: ""%>"
 										height="<%=modeView ? 135 : 1%>"
 										width="<%=modeView ? 135 : 1%>">
@@ -104,7 +106,7 @@ String[] tk_show = {"Mã Quản Trị", "Họ Tên", "Ngày Sinh", "Giới Ti
 							<div class="col-lg-4">
 								<div class="form-group">
 									<label>Ngày sinh</label> <input class="form-control"
-										name="ngaySinh"
+										name="s_ngaySinh"
 										value="<%=(obj != null ? obj.getNgaySinh() : "")%>"
 										<%=(modeView ? " readonly " : "")%>>
 								</div>
@@ -135,56 +137,58 @@ String[] tk_show = {"Mã Quản Trị", "Họ Tên", "Ngày Sinh", "Giới Ti
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
-								<label>Địa Chỉ</label> <input class="form-control"
-									name="diaChi"
-									value="<%=(obj != null && obj.getDiaChi() != null ? obj.getDiaChi() : "")%>"
-									<%=(modeView ? " readonly " : "")%>>
-							</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="form-group">
-								<label>Tôn giáo</label> <input class="form-control"
-									name="tonGiao"
-									value="<%=(obj != null && obj.getTonGiao() != null ? obj.getTonGiao() : "")%>"
-									<%=(modeView ? " readonly " : "")%>>
-							</div>
+									<label>Địa Chỉ</label> <input class="form-control"
+										name="diaChi"
+										value="<%=(obj != null && obj.getDiaChi() != null ? obj.getDiaChi() : "")%>"
+										<%=(modeView ? " readonly " : "")%>>
+								</div>
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
-								<label>Số CMND</label> <input class="form-control" name="cMND"
-									value="<%=(obj != null && obj.getcMND() != null ? obj.getcMND() : "")%>"
-									<%=(modeView ? " readonly " : "")%>>
-							</div>
+									<label>Tôn giáo</label> <input class="form-control"
+										name="tonGiao"
+										value="<%=(obj != null && obj.getTonGiao() != null ? obj.getTonGiao() : "")%>"
+										<%=(modeView ? " readonly " : "")%>>
+								</div>
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label>Số điện thoại</label> <input class="form-control"
-										name="soDienThoaiDiDong"
+									<label>CMND</label> <input class="form-control"
+										name="cMND"
+										value="<%=(obj != null && obj.getcMND() != null ? obj.getcMND() : "")%>"
+										<%=(modeView ? " readonly " : "")%>>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label>Số ĐTDĐ</label> <input class="form-control" name="soDienThoaiDiDong"
 										value="<%=(obj != null && obj.getSoDienThoaiDiDong() != null ? obj.getSoDienThoaiDiDong() : "")%>"
-										<%=(modeView || modeEdit ? " readonly " : "")%>>
+										<%=(modeView ? " readonly " : "")%>>
 								</div>
 							</div>
-							
+
+<!-- 							<div class="col-lg-4"> -->
+<!-- 								<div class="form-group"> -->
+<!-- 									<label>Địa chỉ</label> <input class="form-control" -->
+<!-- 										name="diaChi" r -->
+<%-- 										value="<%=(obj != null ? obj.getDiaChi() : "")%>" --%>
+<%-- 										<%=(modeView || modeEdit ? " readonly " : "")%>> --%>
+<!-- 								</div> -->
+<!-- 							</div> -->
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label>Địa chỉ</label> <input class="form-control"
-										name="diaChi" r
-										value="<%=(obj != null ? obj.getDiaChi() : "")%>"
-										<%=(modeView || modeEdit ? " readonly " : "")%>>
+									<label>Email</label> <input class="form-control"
+										name="email"
+										value="<%=(obj != null && obj.getEmail() != null ? obj.getEmail() : "")%>"
+										<%=(modeView ? " readonly " : "")%>>
 								</div>
 							</div>
 							<div class="col-lg-4">
 								<div class="form-group">
-									<label>Email</label> <input class="form-control" name="email" r
-										value="<%=(obj != null ? obj.getEmail() : "")%>"
-										<%=(modeView || modeEdit ? " readonly " : "")%>>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="form-group">
-									<label>Số tài khoản</label> <input class="form-control" name="email" r
-										value="<%=(obj != null ? obj.getSoDienThoaiDiDong() : "")%>"
-										<%=(modeView || modeEdit ? " readonly " : "")%>>
+									<label>Số tài khoản</label> <input class="form-control"
+										name="soTaiKhoan"
+										value="<%=(obj != null && obj.getSoTaiKhoan() != null ? obj.getSoTaiKhoan() : "")%>"
+										<%=(modeView ? " readonly " : "")%>>
 								</div>
 							</div>
 							<div class="col-lg-4">
@@ -194,6 +198,11 @@ String[] tk_show = {"Mã Quản Trị", "Họ Tên", "Ngày Sinh", "Giới Ti
 										name="ghiChu" <%=(modeView ? " disabled " : "")%>><%=(obj != null && obj.getGhiChu() != null ? obj.getGhiChu() : "")%></textarea>
 								</div>
 							</div>
+							<input type="hidden" name="s_hinhAnh"
+							value="<%=obj != null && obj.getHinhAnh() != null ? obj.getHinhAnh() : ""%>">
+						<input type="hidden" id="myFileName" name="myFileName"></input> <input
+							type="hidden" name="myFolder"
+							value="<%=request.getRealPath("images/quantri")%>" />
 							<div class="panel-footer" style="text-align: left;">
 								<div class="col-md-12"></div>
 								<div class="col-md-12">

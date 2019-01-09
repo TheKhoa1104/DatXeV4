@@ -3,14 +3,17 @@ package eCore.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import eCore.model.TaiXe;
 
 @Entity
-public class HanhTrinhTaiXe implements Comparable<HanhTrinhTaiXe>{
+public class HanhTrinhTaiXe{
 @Id
 	public String maHanhTrinhTaiXe;
+@OneToOne(fetch = FetchType.EAGER)
 	public TaiXe taiXe;
 	public String noiDi;
 	public String tramDung;
@@ -19,19 +22,11 @@ public class HanhTrinhTaiXe implements Comparable<HanhTrinhTaiXe>{
 	public Date ngayDi;
 	public Date thoiGian;
 	public Date thoiGianCapNhat;
-	
-	
-	
-	
 	/**
 	 * 
 	 */
 	public HanhTrinhTaiXe() {
 	}
-
-
-
-
 	/**
 	 * @param maHanhTrinhTaiXe
 	 * @param taiXe
@@ -55,136 +50,60 @@ public class HanhTrinhTaiXe implements Comparable<HanhTrinhTaiXe>{
 		this.thoiGian = thoiGian;
 		this.thoiGianCapNhat = thoiGianCapNhat;
 	}
-
-
-
-
 	public String getMaHanhTrinhTaiXe() {
 		return maHanhTrinhTaiXe;
 	}
-
-
-
-
 	public void setMaHanhTrinhTaiXe(String maHanhTrinhTaiXe) {
 		this.maHanhTrinhTaiXe = maHanhTrinhTaiXe;
 	}
-
-
-
-
 	public TaiXe getTaiXe() {
 		return taiXe;
 	}
-
-
-
-
 	public void setTaiXe(TaiXe taiXe) {
 		this.taiXe = taiXe;
 	}
-
-
-
-
 	public String getNoiDi() {
 		return noiDi;
 	}
-
-
-
-
 	public void setNoiDi(String noiDi) {
 		this.noiDi = noiDi;
 	}
-
-
-
-
 	public String getTramDung() {
 		return tramDung;
 	}
-
-
-
-
 	public void setTramDung(String tramDung) {
 		this.tramDung = tramDung;
 	}
-
-
-
-
 	public String getNoiDen() {
 		return noiDen;
 	}
-
-
-
-
 	public void setNoiDen(String noiDen) {
 		this.noiDen = noiDen;
 	}
-
-
-
-
 	public String getSoLuongGhe() {
 		return soLuongGhe;
 	}
-
-
-
-
 	public void setSoLuongGhe(String soLuongGhe) {
 		this.soLuongGhe = soLuongGhe;
 	}
-
-
-
-
 	public Date getNgayDi() {
 		return ngayDi;
 	}
-
-
-
-
 	public void setNgayDi(Date ngayDi) {
 		this.ngayDi = ngayDi;
 	}
-
-
-
-
 	public Date getThoiGian() {
 		return thoiGian;
 	}
-
-
-
-
 	public void setThoiGian(Date thoiGian) {
 		this.thoiGian = thoiGian;
 	}
-
-
-
-
 	public Date getThoiGianCapNhat() {
 		return thoiGianCapNhat;
 	}
-
-
-
-
 	public void setThoiGianCapNhat(Date thoiGianCapNhat) {
 		this.thoiGianCapNhat = thoiGianCapNhat;
 	}
-
-
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -200,10 +119,6 @@ public class HanhTrinhTaiXe implements Comparable<HanhTrinhTaiXe>{
 		result = prime * result + ((tramDung == null) ? 0 : tramDung.hashCode());
 		return result;
 	}
-
-
-
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -260,10 +175,6 @@ public class HanhTrinhTaiXe implements Comparable<HanhTrinhTaiXe>{
 			return false;
 		return true;
 	}
-
-
-
-
 	@Override
 	public String toString() {
 		return "HanhTrinhTaiXe [maHanhTrinhTaiXe=" + maHanhTrinhTaiXe + ", taiXe=" + taiXe + ", noiDi=" + noiDi
@@ -271,14 +182,10 @@ public class HanhTrinhTaiXe implements Comparable<HanhTrinhTaiXe>{
 				+ ", thoiGian=" + thoiGian + ", thoiGianCapNhat=" + thoiGianCapNhat + "]";
 	}
 
-
-
-
-	@Override
-	public int compareTo(HanhTrinhTaiXe o) {
-		// TODO Auto-generated method stub
-		return this.maHanhTrinhTaiXe.compareTo(o.maHanhTrinhTaiXe);
-	}
 	
-	
+
 }
+	
+	
+	
+	
