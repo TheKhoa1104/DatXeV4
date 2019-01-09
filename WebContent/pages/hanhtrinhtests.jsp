@@ -119,7 +119,7 @@
 						&nbsp; Tải lại
 					</a> 
 					<a type="submit" class="btn  btn-default"
-						href="pages/themMoihanhtrinhtest.jsp" style="text-align: left;"
+						href="pages/luulaihanhtrinhtest.jsp" style="text-align: left;"
 						id="nutThemMoi"> <img src="content/images/new-32.png"
 						width="16px" height="16px" /> &nbsp; Thêm mới
 					</a> 

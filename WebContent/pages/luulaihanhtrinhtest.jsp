@@ -86,14 +86,18 @@ html, body {
 		<div>
 			<b>Mã: </b> <input class="form-control" name="maTest"
 				value="<%=(obj != null ? obj.getMaTest() : System.currentTimeMillis())%>"
-				readonly required="required"> <br> <b>Start:</b> <input
+				readonly required="required"> <br> 
+				<b>Start:</b> 
+				<input
 				id="noiDi" class="controls" type="text" placeholder="Nhập điểm đi"
 				value="<%=(obj != null && obj.getNoiDi() != null ? obj.getNoiDi() : "")%>"
-				<%=(modeView ? " readonly " : "")%>> </input> </input> <br> <br> <b>End:</b>
+				<%=(modeView ? " readonly " : "")%>>
+				 </input>
+				  <br> <br> <b>End:</b>
 			<input id="noiDen" class="controls" type="text"
 				placeholder="Nhập điểm đến"
 				value="<%=(obj != null && obj.getNoiDen() != null ? obj.getNoiDen() : "")%>"
-				<%=(modeView ? " readonly " : "")%>> </input> </input> <br> <input
+				<%=(modeView ? " readonly " : "")%>> </input>  <br> <input
 				type="submit" id="submit">
 		</div>
 		<div id="chiTiet"></div>
