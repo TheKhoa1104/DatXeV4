@@ -48,13 +48,13 @@ html, body {
 	padding-top: 0;
 }
 
-#directions-panel {
-	margin-top: 10px;
-	background-color: #FFEE77;
-	padding: 10px;
-	overflow: scroll;
-	height: 174px;
-}
+ #chitiet { 
+ 	margin-top: 10px; 
+ 	background-color: #FFEE77; 
+ 	padding: 10px; 
+ 	overflow: scroll; 
+ 	height: 174px; 
+ } 
 </style>
 </head>
 <body>
@@ -74,13 +74,13 @@ html, body {
 
 <!-- 			 <br> <input type="submit" id="submit"> -->
 		</div>
-		<div id="directions-panel"></div>
+		<div input id="chitiet" class="controls" type="text" ></div>
 	</div>
 	<script>
 		function initMap() {
 
-			var input = document.getElementById('start');
-			var input2 = document.getElementById('end');
+// 			var input = document.getElementById('start');
+// 			var input2 = document.getElementById('end');
 // 			var autocomplete = new google.maps.places.Autocomplete(input);
 // 			var autocomplete = new google.maps.places.Autocomplete(input2);
 
@@ -131,37 +131,73 @@ html, body {
 				optimizeWaypoints : true,
 				travelMode : 'DRIVING'
 			}, function(response, status) {
-				if (status === 'OK') {
+			//	if (status === 'OK') {
 					directionsDisplay.setDirections(response);
+					
 					var route = response.routes[0];
 					var summaryPanel = document
-							.getElementById('directions-panel');
+							.getElementById('chitiet');
 					summaryPanel.innerHTML = '';
 					// For each route, display summary information.
 					for (var i = 0; i < route.legs.length; i++) {
 						var routeSegment = i + 1;
 						summaryPanel.innerHTML += '<b>Hành trình: '
 								 + '</b><br>';
- 						summaryPanel.innerHTML += route.legs[i].start_address
- 								+ '<b> Đến </b>';
-						summaryPanel.innerHTML += route.legs[i].end_address
-								+ '<br>' + '<b>Khoảng cách: ' ;
-						summaryPanel.innerHTML += route.legs[i].distance.text
-								+ '<br>' + '<b>Thành tiền: </b>';
- 						summaryPanel.innerHTML += (((route.legs[i].distance.value)*0.001).toFixed(1))*7000
- 								+ '<b> VNĐ' ;					
+//  						summaryPanel.innerHTML += route.legs[i].start_address
+//  								+ '<b> Đến </b>';
+// 						summaryPanel.innerHTML += route.legs[i].end_address
+// 								+ '<br>' + '<b>Khoảng cách: ' ;
+						summaryPanel.innerHTML += route.legs[i].distance.text;
+// 								+ '<br>' + '<b>Thành tiền: </b>';
+//  						summaryPanel.innerHTML += (((route.legs[i].distance.value)*0.001).toFixed(1))*7000
+//  								+ '<b> VNĐ' ;	
+ 									
+ 								
 //   						summaryPanel.innerHTML += route.legs[i].duration.text;
 						
 								
 					}
-				} else {
-					window.alert('Directions request failed due to ' + status);
+			//	} else {
+				//	window.alert('Nhập điểm đến ');
+				//}
+			},
+			
+			function(response1, status) {
+				//	if (status === 'OK') {
+						directionsDisplay.setDirections(response);
+						
+						var route = response.routes[0];
+						var summaryPanel = document
+								.getElementById('directions-panel');
+						summaryPanel.innerHTML = '';
+						// For each route, display summary information.
+						for (var i = 0; i < route.legs.length; i++) {
+							var routeSegment = i + 1;
+							summaryPanel.innerHTML += '<b>Hành trình: '
+									 + '</b><br>';
+	 						summaryPanel.innerHTML += route.legs[i].start_address
+	 								+ '<b> Đến </b>';
+							summaryPanel.innerHTML += route.legs[i].end_address
+									+ '<br>' + '<b>Khoảng cách: ' ;
+							summaryPanel.innerHTML += route.legs[i].distance.text
+									+ '<br>' + '<b>Thành tiền: </b>';
+	 						summaryPanel.innerHTML += (((route.legs[i].distance.value)*0.001).toFixed(1))*7000
+	 								+ '<b> VNĐ' ;	
+	 									
+	 								
+//	   						summaryPanel.innerHTML += route.legs[i].duration.text;
+							
+									
+						}
+				//	} else {
+					//	window.alert('Nhập điểm đến ');
+					//}
 				}
-			});
+			);
 		}
 	</script>
 	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABUZPxB1tHjAh2pZEHkc3TJHNQiv9Kmrg&libraries=places&callback=initMap">
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC58Pa1xnAA7rcKkgAcwX28G0-gyWLpryU&libraries=places&callback=initMap">
 		
 	</script>
 </body>

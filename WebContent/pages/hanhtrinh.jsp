@@ -102,7 +102,7 @@
 
 
 								<div class="form-group">
-									<label>Nơi Đi</label> <input id="noiDi" class="controls"
+									<label>Nơi Đi</label> <input id="noiDi" name="noiDi"class="controls"
 										type="text"  
 										value="<%=(obj != null ? obj.getNoiDi() : "")%>"
 										<%=(modeView  ? " readonly " : "")%>> </input>
@@ -110,7 +110,7 @@
 
 
 								<div class="form-group">
-									<label>Nơi Đến </label> <input id="noiDen" class="controls"
+									<label>Nơi Đến </label> <input id="noiDen" name="noiDen" class="controls"
 										type="text" value="<%=(obj != null ? obj.getNoiDen() : "")%>"
 										<%=(modeView  ? " readonly " : "")%>> </input>
 
@@ -193,7 +193,7 @@
 								      }
 								</script>
 								<script async defer
-									src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABUZPxB1tHjAh2pZEHkc3TJHNQiv9Kmrg&libraries=places&callback=initMap">
+									src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC58Pa1xnAA7rcKkgAcwX28G0-gyWLpryU&libraries=places&callback=initMap">
 									
 								</script>
 

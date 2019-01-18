@@ -59,7 +59,7 @@
     <div>
     <b>Start:</b>
     <input id="noiDi" class="controls" type="text"
-				placeholder="Nhập điểm đi">
+				>
     </input>
     </input>
     <br>
@@ -79,10 +79,10 @@
     <script>
       function initMap() {
     	  
-//     	var input = document.getElementById('start');
-// 		var input2 = document.getElementById('end');
-// 		var autocomplete = new google.maps.places.Autocomplete(input);
-// 		var autocomplete = new google.maps.places.Autocomplete(input2);  
+     	var input = document.getElementById('noiDi');
+// 		var input2 = document.getElementById('noiDen');
+  		var autocomplete = new google.maps.places.Autocomplete(input);
+//  		var autocomplete = new google.maps.places.Autocomplete(input2);  
     	  
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -144,7 +144,7 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABUZPxB1tHjAh2pZEHkc3TJHNQiv9Kmrg&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC58Pa1xnAA7rcKkgAcwX28G0-gyWLpryU&callback=initMap">
     </script>
   </body>
 </html>
